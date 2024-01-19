@@ -25,9 +25,9 @@ const Header = () => {
       <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
         <label htmlFor="my-drawer" className="btn btn-primary drawer-button w-[60%] rounded-badge my-5">
           <ImCircleLeft/>Close</label>
-          <li><Link to={"/"}>{"Home"}</Link></li>
-          <li><Link to={"/Dashboard"}>{"Feeds"}</Link></li>
-          <li><Link to={"/Authors"}>{"Authors"}</Link></li>
+          <li className="border-primary border-b-2"><Link to={"/"}>{"Home"}</Link></li>
+          <li className="border-primary border-b-2"><Link to={"/Dashboard"}>{"Feeds"}</Link></li>
+          <li className="border-primary border-b-2"><Link to={"/Authors"}>{"Authors"}</Link></li>
       </ul>
     </div>
   </div>
