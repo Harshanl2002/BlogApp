@@ -7,31 +7,31 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
-    <div className="bg-[#445144] flex flex-col shadow-xl select-none px-10 font-poppins bottom-0 pt-5">
-      <div className="lg:flex lg:w-2/3 lg:justify-between max-lg:w-full max-lg:flex-col max-lg:items-center">
-        <div className="flex-col lg:w-[15%]">
-          <div className="text-white text-[40px] font-logo font-bold flex max-lg:justify-center">.bl<span className="text-blue-400 flex items-center"><TbMessageCircle2Filled/></span>g</div>
-          <p className="text-[12px] text-white font-poppins font-extralight max-lg:text-center">Follow us on</p>
-          <div className="flex justify-between w-full text-white mt-5 text-3xl max-lg:w-full max-lg:justify-evenly">
-            <a href="#" target="_blank" rel="noreferrer"><FaLinkedin/></a>
-            <a href="#" target="_blank" rel="noreferrer"><FaFacebookSquare/></a>
-            <a href="#" target="_blank" rel="noreferrer"><VscGithubInverted/></a>
-          </div>
+    <footer className="footer footer-center p-10 bg-primary  rounded text-white">
+      <nav className="grid lg:grid-flow-col max-lg:grid-flow-row gap-4">
+        <a className="link link-hover"><Link to={"posts/catagory/Agriculture"}>Agriculture</Link></a>
+        <a className="link link-hover"><Link to={"posts/catagory/Education"}>Education</Link></a>
+        <a className="link link-hover"><Link to={"posts/catagory/Finance"}>Finance</Link></a>
+        <a className="link link-hover"><Link to={"posts/catagory/Technology"}>Technology</Link></a>
+        <a className="link link-hover"><Link to={"posts/catagory/Food"}>Food</Link></a>
+        <a className="link link-hover"><Link to={"posts/catagory/Health"}>Health</Link></a>
+        <a className="link link-hover"><Link to={"posts/catagory/Games"}>Games</Link></a>
+        <a className="link link-hover"><Link to={"posts/catagory/Movies"}>Movies</Link></a>
+        <a className="link link-hover"><Link to={"posts/catagory/Anime"}>Anime</Link></a>
+        <a className="link link-hover"><Link to={"posts/catagory/Uncatagorized"}>Uncatagorized</Link></a>
+      </nav> 
+      <nav>
+        <div className="text-white text-3xl font-logo font-bold flex max-lg:justify-center mb-5">.bl<span className="text-blue-400 flex items-center"><TbMessageCircle2Filled/></span>g</div>
+        <div className="grid grid-flow-col gap-4">
+          <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" className="fill-current"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path></svg></a>
+          <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" className="fill-current"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path></svg></a>
+          <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" className="fill-current"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path></svg></a>
         </div>
-        <div className="flex-col w-[20%] max-lg:w-full">
-          <p className="text-white lg:text-sm py-2 max-lg:text-center">category</p>
-        </div>
-        <div className="flex-col w-[20%] max-lg:w-full max-lg:items-center">
-          <p className="text-white lg:text-sm py-2 max-lg:text-center">Links</p>
-          <ul className="lg:mx-2 h-[20vh] border-2 justify-evenly text-white text-[12px] font-poppins font-extralight">
-          <li><Link to={"/"}>{"Home"}</Link></li>
-          <li><Link to={"/Dashboard"}>{"Feeds"}</Link></li>
-          <li><Link to={"/Authors"}>{"Authors"}</Link></li>
-          </ul>
-        </div>
-      </div>
-        <p className="font-poppins text-white font-thin text-[8px] self-end my-5 max-lg:self-center">@ 2024 .Blog All rights reserved</p>
-    </div>
+      </nav> 
+      <aside>
+        <p className="max-lg:text-[8px]">Copyright © 2024 - All right reserved by <span className="text-blue-400 font-logo">.blog</span>&nbsp;(Fairuse).</p>
+      </aside>
+    </footer>
   )
 }
 
