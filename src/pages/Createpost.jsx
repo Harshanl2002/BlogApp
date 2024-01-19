@@ -1,7 +1,9 @@
 import React from 'react'
 
-export const Createpost = () => {
+function Createpost() {
   return (
     <div>Createpost</div>
   )
 }
+
+export default Createpost
