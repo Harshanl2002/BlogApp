@@ -1,9 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import usermale from "../assets/user-male-circle.png"
-import userfemale from "../assets/user-female-circle.png"
 import { GiHamburgerMenu } from "react-icons/gi";
-import { MdClose } from "react-icons/md";
 import { TbMessageCircle2Filled } from "react-icons/tb";
 import { ImCircleLeft } from "react-icons/im";
 
@@ -11,7 +9,7 @@ import { ImCircleLeft } from "react-icons/im";
 const Header = () => {
   let Profilename="Harshan";
   return (
-   <div className="navbar bg-primary font-poppins sticky top-0">
+   <div className="navbar font-poppins sticky top-0">
     <div className="max-lg:navbar-start lg:hidden">
     <div className="drawer">
     <input id="my-drawer" type="checkbox" className="drawer-toggle" />
@@ -34,16 +32,16 @@ const Header = () => {
       </div>
     <div className="lg:navbar-start max-lg:navbar-center">
       <Link to={"/"}>
-        <div className="text-white text-3xl font-logo font-bold flex max-lg:justify-center">.bl<span className="text-blue-400 flex items-center"><TbMessageCircle2Filled/></span>g</div>
+        <div className="text-primary text-3xl font-logo font-bold flex max-lg:justify-center">.bl<span className="text-blue-400 flex items-center"><TbMessageCircle2Filled/></span>g</div>
       </Link>
     </div>
-    <div className="lg:navbar-center max-lg:hidden text-white">
+    <div className="lg:navbar-center max-lg:hidden text-primary">
       <form>
-        <input type="text" placeholder="Search..." className="input input-bordered input-primary w-full max-w-xs bg-[#496649]"/>
+        <input type="text" placeholder="Search..." className="input input-primary w-full max-w-xs focus:border-none  focus:outline-none"/>
       </form>
     </div>
     <div className="navbar-end">
-    <ul className="menu menu-horizontal text-white max-lg:hidden">
+    <ul className="menu menu-horizontal text-primary focus:text-primary max-lg:hidden">
         <li><Link to={"/"}>{"Home"}</Link></li>
         <li><Link to={"/Dashboard"}>{"Feeds"}</Link></li>
         <li><Link to={"/Authors"}>{"Authors"}</Link></li>

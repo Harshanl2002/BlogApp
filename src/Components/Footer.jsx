@@ -1,13 +1,10 @@
 import React from 'react'
 import { TbMessageCircle2Filled } from "react-icons/tb";
-import { VscGithubInverted } from "react-icons/vsc";
-import { FaLinkedin } from "react-icons/fa6";
-import { FaFacebookSquare } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
-    <footer className="footer footer-center p-10 bg-primary  rounded text-white">
+    <footer className="footer footer-center p-10 bg-primary  text-white">
       <nav className="grid lg:grid-flow-col max-lg:grid-flow-row gap-4">
         <a className="link link-hover"><Link to={"posts/catagory/Agriculture"}>Agriculture</Link></a>
         <a className="link link-hover"><Link to={"posts/catagory/Education"}>Education</Link></a>
