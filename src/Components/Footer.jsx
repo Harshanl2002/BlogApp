@@ -4,18 +4,18 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
-    <footer className="footer footer-center p-10 bg-primary  text-white">
+    <footer className="footer footer-center p-10 bg-primary text-white">
       <nav className="grid lg:grid-flow-col max-lg:grid-flow-row gap-4">
-        <a className="link link-hover"><Link to={"posts/catagory/Agriculture"}>Agriculture</Link></a>
-        <a className="link link-hover"><Link to={"posts/catagory/Education"}>Education</Link></a>
-        <a className="link link-hover"><Link to={"posts/catagory/Finance"}>Finance</Link></a>
-        <a className="link link-hover"><Link to={"posts/catagory/Technology"}>Technology</Link></a>
-        <a className="link link-hover"><Link to={"posts/catagory/Food"}>Food</Link></a>
-        <a className="link link-hover"><Link to={"posts/catagory/Health"}>Health</Link></a>
-        <a className="link link-hover"><Link to={"posts/catagory/Games"}>Games</Link></a>
-        <a className="link link-hover"><Link to={"posts/catagory/Movies"}>Movies</Link></a>
-        <a className="link link-hover"><Link to={"posts/catagory/Anime"}>Anime</Link></a>
-        <a className="link link-hover"><Link to={"posts/catagory/Uncatagorized"}>Uncatagorized</Link></a>
+        <Link to={"posts/catagory/Agriculture"} className="link link-hover">Agriculture</Link>
+        <Link to={"posts/catagory/Education"} className="link link-hover">Education</Link>
+        <Link to={"posts/catagory/Finance"} className="link link-hover">Finance</Link>
+        <Link to={"posts/catagory/Technology"} className="link link-hover">Technology</Link>
+        <Link to={"posts/catagory/Food"} className="link link-hover">Food</Link>
+        <Link to={"posts/catagory/Health"} className="link link-hover">Health</Link>
+        <Link to={"posts/catagory/Games"} className="link link-hover">Games</Link>
+        <Link to={"posts/catagory/Movies"} className="link link-hover">Movies</Link>
+        <Link to={"posts/catagory/Anime"} className="link link-hover">Anime</Link>
+        <Link to={"posts/catagory/Uncatagorized"} className="link link-hover">Uncatagorized</Link>
       </nav> 
       <nav>
         <div className="text-white text-3xl font-logo font-bold flex max-lg:justify-center mb-5">.bl<span className="text-blue-400 flex items-center"><TbMessageCircle2Filled/></span>g</div>

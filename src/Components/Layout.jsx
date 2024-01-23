@@ -5,7 +5,7 @@ import Footer from "./Footer"
 
 const Layout = () => {
   return (
-    <div className="overflow-hidden text-primary">
+    <div className="text-primary overflow-clip">
     <Header />
         <Outlet/>
     <Footer />
