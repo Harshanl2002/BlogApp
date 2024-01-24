@@ -5,7 +5,7 @@ import Footer from "./Footer"
 
 const Layout = () => {
   return (
-    <div className="text-primary overflow-clip">
+    <div className="text-primary overflow-clip bg-[#dafada]">
     <Header />
         <Outlet/>
     <Footer />

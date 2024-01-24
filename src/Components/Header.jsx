@@ -35,11 +35,6 @@ const Header = () => {
         <div className="text-primary text-3xl font-logo font-bold flex max-lg:justify-center">.bl<span className="text-blue-400 flex items-center"><TbMessageCircle2Filled/></span>g</div>
       </Link>
     </div>
-    <div className="lg:navbar-center max-lg:hidden text-primary">
-      <form>
-        <input type="text" placeholder="Search..." className="input input-primary w-full max-w-xs focus:border-none  focus:outline-none"/>
-      </form>
-    </div>
     <div className="navbar-end">
     <ul className="menu menu-horizontal text-primary focus:text-primary max-lg:hidden ">
         <li><Link to={"/"}>{"Home"}</Link></li>
