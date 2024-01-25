@@ -8,7 +8,8 @@ export default {
     extend: {},
     fontFamily:{
       poppins:'"Poppins", sans-serif',
-      logo:"logo"
+      logo:"logo",
+      Roboto:`'Roboto', sans-serif`
     }
   },
   plugins: [require("daisyui")],
