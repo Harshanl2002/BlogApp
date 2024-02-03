@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;800&family=Roboto:wght@300;400;500;700;900&display=swap');
+@import url("./fonts.css");
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.bg
+{
+    background: hsla(165, 89%, 31%, 1);
+
+background: linear-gradient(90deg, hsla(165, 89%, 31%, 1) 0%, hsla(161, 46%, 49%, 1) 100%);
+
+background: -moz-linear-gradient(90deg, hsla(165, 89%, 31%, 1) 0%, hsla(161, 46%, 49%, 1) 100%);
+
+background: -webkit-linear-gradient(90deg, hsla(165, 89%, 31%, 1) 0%, hsla(161, 46%, 49%, 1) 100%);
+
+filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#099773", endColorstr="#43B692", GradientType=1 );
+}
+
+.box {
+    --mask:
+      radial-gradient(49.20px at calc(100% - 69.00px) 50%,#000 99%,#0000 101%) 0 calc(50% - 60px)/100% 120px,
+      radial-gradient(49.20px at calc(100% + 39.00px) 50%,#0000 99%,#000 101%) calc(100% - 30px) 50%/100% 120px repeat-y;
+    -webkit-mask: var(--mask);
+            mask: var(--mask);
+  }
+
+  .loginanimation
+  {
+    animation: loginscr 1s ease-in-out;
+  }
+
+  @keyframes loginscr {
+    0%
+    {
+      transform: translateX(-60vw);
+    }
+    100%
+    {
+      transform: translateX(0px)
+    }
+  }
+
+  @keyframes register {
+    0%
+    {
+      transform: translateX(60vw);
+    }
+    100%
+    {
+      transform: translateX(0px);
+    }
+  }
+.registerscr
+{
+  animation:register 1s ease-in-out;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
