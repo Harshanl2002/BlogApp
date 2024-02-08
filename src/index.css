@@ -59,6 +59,11 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#099773", en
   animation:register 1s ease-in-out;
 }
 
+
+.ql-editor {
+  @apply min-h-[20vh];
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

@@ -18,11 +18,11 @@ const Dashboard = () => {
                 </figure>
                 <h2 className="mx-2 font-bold text-black text-[14px]">{item.title}</h2>
               </div>
-              <div className='flex items-center min-w-[25%] justify-evenly max-lg:min-w-full max-lg:flex-col-reverse'>
-                <Link to={`/post/${item.id}`} className="text-[#1e1e1e] text-xs max-lg:my-2">View Post</Link>
+              <div className='flex items-center min-w-[15%] justify-evenly max-lg:min-w-full max-lg:flex-col-reverse'>
+                <Link to={`/post/${item.id}`} className="text-[#1e1e1e] text-xs max-lg:my-2">View</Link>
                 <div className='min-w-[75%] flex justify-evenly items-center max-lg:min-w-full'>
-                <Link to={`/post/Editpost/${item.id}`} className="btn btn-info btn-xs">Edit Post</Link>
-                <Link to={`post/DeletePost/${item.id}`} className="btn btn-error btn-xs">Delete Post</Link>
+                <Link to={`/post/Editpost/${item.id}`} className="btn btn-info btn-xs">Edit</Link>
+                <Link to={`/post/DeletePost/${item.id}`} className="btn btn-error btn-xs">Delete</Link>
                 </div>
               </div>
             </div>)

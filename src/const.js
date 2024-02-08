@@ -182,3 +182,50 @@ export const Dashboardposts=[
     {id:3,thumbnail:b3,title:"Post-3"},
     {id:4,thumbnail:b4,title:"Post-4"}
 ];
+
+export const createpostData={
+    id:1,
+    thumbnail:b1,
+    catogory:"education",
+    title:"Lorem ipsum dolor sit amet consectetur adipisicing Lorem ipsum dolor sit amet consectetur adipisicing New Post-1",
+    content:"Lorem ipsum dolor sit amet consectetur adipisicing elit. In quibusdam Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit iure id quod explicabo? Perferendis dignissimos reiciendis odio facere perspiciatis quia!...",
+}
+
+
+export const cat=["Agriculture",
+           "Education",
+           "Finance",
+           "Technology",
+           "Food",
+           "Health",
+           "Games",
+           "Movies",
+           "Anime",
+           "Uncatagorized"
+]
+
+export const modules = {
+    toolbar:[
+        [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+        ['bold', 'italic', 'underline', 'strike', 'blockquote'],
+        [{'list': 'ordered'}, {'list': 'bullet'}, {'indent': '-1'}, {'indent': '+1'}],
+        ['link', 'image'],
+        ['clean']
+    ]
+}
+
+export const format=[
+    'header',
+    'bold', 'italic', 'underline', 'strike', 'blockquote',
+    'list', 'bullet', 'indent',
+    'link', 'image'
+]
+
+export const editpostvar={
+    id:1,
+    thumbnail:b1,
+    catogory:"education",
+    title:"Lorem ipsum dolor sit amet consectetur adipisicing Lorem ipsum dolor sit amet consectetur adipisicing New Post-1",
+    content:"Lorem ipsum dolor sit amet consectetur adipisicing elit. In quibusdam Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit iure id quod explicabo? Perferendis dignissimos reiciendis odio facere perspiciatis quia!...",
+    author_id:1
+}

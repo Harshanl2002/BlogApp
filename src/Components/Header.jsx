@@ -9,7 +9,7 @@ import { ImCircleLeft } from "react-icons/im";
 const Header = () => {
   let Profilename="Harshan";
   return (
-   <div className="navbar font-poppins sticky top-0 z-1 backdrop-blur-xl bg-white/30">
+   <div className="navbar font-poppins static top-0 z-1 backdrop-blur-xl bg-white/30">
     <div className="max-lg:navbar-start lg:hidden">
     <div className="drawer">
     <input id="my-drawer" type="checkbox" className="drawer-toggle" />
@@ -24,7 +24,7 @@ const Header = () => {
         <label htmlFor="my-drawer" className="btn btn-primary drawer-button w-[60%] rounded-badge my-5">
           <ImCircleLeft/>Close</label>
           <li className="border-primary border-b-2"><Link to={"/"}>{"Home"}</Link></li>
-          <li className="border-primary border-b-2"><Link to={"/Dashboard/dummy"}>{"Dashboard"}</Link></li>
+          <li className="border-primary border-b-2"><Link to={"/Dashboard"}>{"Dashboard"}</Link></li>
           <li className="border-primary border-b-2"><Link to={"/Authors"}>{"Authors"}</Link></li>
       </ul>
     </div>

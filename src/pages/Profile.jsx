@@ -21,10 +21,10 @@ const Profile = () => {
         <Link to={`/Dashboard/${id}`} className="btn btn-primary btn-sm text-white">My Posts</Link>
       </div>
       <div className="my-2 flex items-center">
-        <img src={avatars} alt="current User Profile photo" className="rounded-[50%] lg:w-[15vw] lg:h-[30vh] max-lg:w-[50vw] max-lg:h-[30vh]"  />
-        <input type='file' name='avatar' id='avatar' accept=".jpg,.jpeg,.png,.gif" onChange={(e)=>{ 
+        <img src={avatars} alt="current User Profile photo" className="rounded-[50%] block lg:w-[15vw] lg:h-[30vh] max-lg:w-[50vw] max-lg:h-[30vh]"  />
+        <input type='file' name='avatar' id='avatar' accept=".jpg,.jpeg,.png" onChange={(e)=>{ 
           setAvatar(URL.createObjectURL(e.target.files[0]))}}  className="hidden"/>
-          <label htmlFor='avatar' className='btn btn-primary btn-circle btn-sm self-end absolute mx-[27vh] max-lg:mx-[21vh] lg:my-[30px]'><FaEdit/></label>
+          <label htmlFor='avatar' className='btn btn-primary btn-circle btn-sm self-end flex ms-[-35px] lg:my-[30px]'><FaEdit/></label>
       </div>
       <p className="min-w-[50vw] max-lg:w-[85vw] text-center  bg-red-300 text-[#1e1e1e] text-[16px] rounded-sm p-2">{"This is an Error message"}</p>
       <div className="mb-5 flex flex-col items-center">
