@@ -2,9 +2,17 @@ import React,{useState} from 'react';
 import { Link } from 'react-router-dom';
 import avatar from "../assets/user-male-circle.png";
 import { FaEdit,FaCheck } from "react-icons/fa";
+import { BaseURIAPI } from '../const.URI';
+import  axios from 'axios';
+import { UserContext } from '../context/user.context';
+
+
 const value={
   name:"Adler Coffey",
   Email:"AdlerCoffey@gmail.com",
+  password:"",
+  newpassword:"",
+  confirmPassword:""
 }
 const Profile = () => {
   const [avatars,setAvatar]=useState(avatar);
@@ -31,9 +39,9 @@ const Profile = () => {
         <form className="flex flex-col min-h-[45vh] justify-evenly">
           <input type='text' name='name' placeholder="Name" className="lg:w-[50vw] max-lg:w-[85vw] input input-sm focus:outline-none border border-[#8a8a8a] rounded-[4px]" value={values.name} onChange={changeInputHandeler} />
           <input type='text' name='Email' placeholder="Email" className="lg:w-[50vw] max-lg:w-[85vw] input input-sm focus:outline-none border border-[#8a8a8a] rounded-[4px]" value={values.Email} onChange={changeInputHandeler}/>
-          <input type='password' name='current_password' placeholder="Current password" className="lg:w-[50vw] max-lg:w-[85vw] input input-sm focus:outline-none border border-[#8a8a8a] rounded-[4px]" />
-          <input type='password' name='new_password' placeholder="New Password" className="lg:w-[50vw] max-lg:w-[85vw] input input-sm focus:outline-none border border-[#8a8a8a] rounded-[4px]" />
-          <input type='password' name='confirm_password' placeholder="Confirm Password" className="lg:w-[50vw] max-lg:w-[85vw] input input-sm focus:outline-none border border-[#8a8a8a] rounded-[4px]" />
+          <input type='password' name='current_password' placeholder="Current password" className="lg:w-[50vw] max-lg:w-[85vw] input input-sm focus:outline-none border border-[#8a8a8a] rounded-[4px]" value={values.password} onChange={changeInputHandeler} />
+          <input type='password' name='new_password' placeholder="New Password" className="lg:w-[50vw] max-lg:w-[85vw] input input-sm focus:outline-none border border-[#8a8a8a] rounded-[4px]" value={values.newpassword} onChange={changeInputHandeler} />
+          <input type='password' name='confirm_password' placeholder="Confirm Password" className="lg:w-[50vw] max-lg:w-[85vw] input input-sm focus:outline-none border border-[#8a8a8a] rounded-[4px]" value={values.confirmPassword} onChange={changeInputHandeler} />
           <button type='submit' className='btn btn-sm btn-primary mx-auto'>{"Update Changes"}</button>
         </form>
       </div>

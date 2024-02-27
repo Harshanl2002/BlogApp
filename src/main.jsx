@@ -17,12 +17,13 @@ import CreatePost from "./pages/Createpost";
 import Catagorypost from './pages/Catagorypost';
 import AuthorPost from "./pages/Authorpost";
 import Author from "./pages/Author"
+import UserProvider from './context/user.context';
 
 
 const router=createBrowserRouter([{
   path:"/",
   errorElement:<Errorpage/>,
-  element:<Layout/>,
+  element:<UserProvider><Layout/></UserProvider>,
   children:[
     {index:true,element:<Home/>},
     {path:"Authors",element:<Author/>},
@@ -34,10 +35,12 @@ const router=createBrowserRouter([{
     {path:"post/DeletePost/:id",element:<DeletePost/>},
     {path:"posts/catagory/:cat",element:<Catagorypost/>},
     {path:"posts/Authors/:id",element:<AuthorPost/>},
-  ]
-},{path:"Login",element:<Login/>},
-{path:"register",element:<Register/>},
-{path:"Logout",element:<Logout/>},]);
+  ],
+  },  
+    {path:"Login",element:<UserProvider><Login/></UserProvider>},
+    {path:"register",element:<UserProvider><Register/></UserProvider>},
+    {path:"Logout",element:<UserProvider><Logout/></UserProvider>},
+]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

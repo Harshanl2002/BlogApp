@@ -1,13 +1,16 @@
-import React from 'react';
+import React,{useContext} from 'react';
 import { Link } from 'react-router-dom';
 import usermale from "../assets/user-male-circle.png"
 import { GiHamburgerMenu } from "react-icons/gi";
 import { TbMessageCircle2Filled } from "react-icons/tb";
 import { ImCircleLeft } from "react-icons/im";
+import { UserContext } from '../context/user.context';
 
 
 const Header = () => {
-  let Profilename="Harshan";
+
+  const {currentUser}=useContext(UserContext);
+
   return (
    <div className="navbar font-poppins static top-0 z-1 backdrop-blur-xl bg-white/30">
     <div className="max-lg:navbar-start lg:hidden">
@@ -24,8 +27,11 @@ const Header = () => {
         <label htmlFor="my-drawer" className="btn btn-primary drawer-button w-[60%] rounded-badge my-5">
           <ImCircleLeft/>Close</label>
           <li className="border-primary border-b-2"><Link to={"/"}>{"Home"}</Link></li>
-          <li className="border-primary border-b-2"><Link to={"/Dashboard"}>{"Dashboard"}</Link></li>
+          {currentUser!==null&&<li className="border-primary border-b-2"><Link to={"/Dashboard"}>{"Dashboard"}</Link></li>}
           <li className="border-primary border-b-2"><Link to={"/Authors"}>{"Authors"}</Link></li>
+          {currentUser===null&&<li className="border-primary border-b-2"><Link to={"/Login"}>Login</Link></li>}
+        {currentUser===null&&<li className="border-primary border-b-2"><Link to={"/register"}>Register</Link></li>
+       }
       </ul>
     </div>
   </div>
@@ -38,19 +44,22 @@ const Header = () => {
     <div className="navbar-end flex items-center">
     <ul className="menu menu-horizontal text-primary focus:text-primary max-lg:hidden ">
         <li><Link to={"/"}>{"Home"}</Link></li>
-        <li><Link to={"/Dashboard/dummy"}>{"Dashboard"}</Link></li>
+        {currentUser!==null&&<li><Link to={"/Dashboard/dummy"}>{"Dashboard"}</Link></li>}
         <li><Link to={"/Authors"}>{"Authors"}</Link></li>
+        
     </ul>
-    <div className="dropdown dropdown-bottom dropdown-end">
+    {currentUser!==null&&<div className="dropdown dropdown-bottom dropdown-end">
       <div tabIndex={0} role="button" className="btn btn-primary btn-circle m-1 sticky"><img src={usermale}/></div>
       <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
-      {/* <li><Link to={"/Login"}>Login</Link></li>
-      <li><Link to={"/register"}>Register</Link></li> */}
       <li><Link to={"/profile/check"}>Your Profile</Link></li>
       <li><Link to={"/post/createpost"}>Create post</Link></li>
       <li><Link to={"/logout"}>LogOut</Link></li>
     </ul>
-    </div>
+    </div>}
+    {currentUser===null&&<div className='flex min-w-[10vw] rounded max-lg:hidden'>
+        <div className='btn btn-primary btn-sm text-white'><Link to={"/Login"}>Login</Link></div>
+        <div className='btn btn-sm border border-primary mx-1 text-primary bg-white'><Link to={"/register"}>Register</Link></div>
+        </div>}
     </div>
     </div>
   )

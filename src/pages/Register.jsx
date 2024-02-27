@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
 import { TbMessageCircle2Filled } from "react-icons/tb";
-import svg from "../assets/register.svg"
+import svg from "../assets/register.svg";
+import { BaseURIAPI } from '../const.URI';
+import  axios from 'axios';
+
+
+
 const register = () => {
   const [userdata,setuserdata]=useState({
     name:'',
@@ -9,10 +14,30 @@ const register = () => {
     password:'',
     password2:''
   });
+  const [errorMsg, setErrorMsg] = useState('');
+  const navigate=useNavigate();
+
+
   const changeInputHandeler=(e)=>{
     setuserdata(prevState=>{
       return {...prevState,[e.target.name]:e.target.value}
     })
+  };
+  const registeruser=async (e) => {
+    e.preventDefault()
+    setErrorMsg('');
+    try {
+      const response=await axios.post(BaseURIAPI+"user/register", userdata);
+      const newuser=await response.data;
+      navigate('/login');
+      console.log(newuser);
+      if(!newuser){
+        setErrorMsg("Couldn't Register User Plz try again after sometime.")
+      };
+    } catch (error) {
+      setErrorMsg(error.response.data.message);
+    }
+
   }
 
   return (
@@ -32,8 +57,8 @@ const register = () => {
       </div>
       <div className="min-w-[60vw] min-h-full  flex flex-col  items-center py-10 font-Roboto transition-all duration-300">
           <h1 className="text-[40px] font-bold font-poppins mb-10">Sign Up</h1>
-          <form  className="min-w-[90%] ms-[5%] me-[5%] max-w-[90%]  flex flex-col items-center py-10">
-            <p className="min-w-[90%] text-center bg-red-300 my-2 text-[#1e1e1e] text-[16px] rounded-sm p-2">{"This is an Error message"}</p>
+          <form  className="min-w-[90%] ms-[5%] me-[5%] max-w-[90%]  flex flex-col items-center py-10" onSubmit={registeruser}>
+            {errorMsg &&<p className="min-w-[90%] text-center bg-red-300 my-2 text-[#1e1e1e] text-[16px] rounded-sm p-2">{errorMsg}</p>}
             <input type="text" placeholder="Full Name" name='name' value={userdata.name} onChange={changeInputHandeler} className="min-w-[90%] border border-[#929292] p-1 focus:outline-none mb-2 rounded-sm" />
             <input type="text" placeholder="Email" name='email' value={userdata.email} onChange={changeInputHandeler} className="min-w-[90%] border border-[#929292] p-1 focus:outline-none mb-2 rounded-sm" />
             <input type="password" placeholder="Password" name='password' value={userdata.password} onChange={changeInputHandeler} className="min-w-[90%] border border-[#929292] p-1 focus:outline-none mb-2 rounded-sm" />
