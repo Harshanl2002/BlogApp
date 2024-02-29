@@ -16,7 +16,7 @@ const Header = () => {
   const {currentAvathar,SetcurrentAvathar}=useContext(Avatarcontext);
   const [avatars,setAvatar]=useState(currentAvathar===null?usermale:currentAvathar.avatarURL);
   useEffect( ()=>{
-    if (currentUser) {
+    if (currentUser&&!(avatars===currentAvathar.avatarURL)) {
       getavathar()
     }},[currentAvathar])
   const getavathar=async()=>{
