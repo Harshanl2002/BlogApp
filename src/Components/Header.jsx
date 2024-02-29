@@ -1,16 +1,39 @@
-import React,{useContext} from 'react';
+import React,{useContext,useState,useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import usermale from "../assets/user-male-circle.png"
 import { GiHamburgerMenu } from "react-icons/gi";
 import { TbMessageCircle2Filled } from "react-icons/tb";
 import { ImCircleLeft } from "react-icons/im";
 import { UserContext } from '../context/user.context';
+import axios from 'axios';
+import { BaseURI,BaseURIAPI } from '../const.URI';
+import { Avatarcontext } from '../context/Avathar.context';
 
 
 const Header = () => {
 
   const {currentUser}=useContext(UserContext);
-
+  const {currentAvathar,SetcurrentAvathar}=useContext(Avatarcontext);
+  const [avatars,setAvatar]=useState(currentAvathar===null?usermale:currentAvathar.avatarURL);
+  useEffect( ()=>{
+    if (currentUser) {
+      getavathar()
+    }},[currentAvathar])
+  const getavathar=async()=>{
+      try {
+        const myHeaders = {
+          'Content-Type': "text/json",
+          'Authorization': `Bearer ${currentUser.token}`, // Add any other headers as needed
+        };
+        const response=await axios.get(`${BaseURIAPI}/user/byID/?:id=${currentUser.id}`,{headers:myHeaders});
+        const val=response.data;
+        console.log(BaseURI+"/assets/uploads/"+val.avatar)
+        setAvatar(BaseURI+"/assets/uploads/"+val.avatar);
+        SetcurrentAvathar({avatarURL:BaseURI+"/assets/uploads/"+val.avatar})
+      } catch (error) {
+        console.log(error);
+      }
+  }
   return (
    <div className="navbar font-poppins static top-0 z-1 backdrop-blur-xl bg-white/30">
     <div className="max-lg:navbar-start lg:hidden">
@@ -49,7 +72,7 @@ const Header = () => {
         
     </ul>
     {currentUser!==null&&<div className="dropdown dropdown-bottom dropdown-end">
-      <div tabIndex={0} role="button" className="btn btn-primary btn-circle m-1 sticky"><img src={usermale}/></div>
+      <div tabIndex={0} role="button" className="btn btn-primary btn-circle m-1 sticky"><img className='rounded-[50%]' src={avatars}/></div>
       <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
       <li><Link to={"/profile/check"}>Your Profile</Link></li>
       <li><Link to={"/post/createpost"}>Create post</Link></li>

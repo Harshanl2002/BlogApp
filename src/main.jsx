@@ -18,21 +18,23 @@ import Catagorypost from './pages/Catagorypost';
 import AuthorPost from "./pages/Authorpost";
 import Author from "./pages/Author"
 import UserProvider from './context/user.context';
+import Auth from './context/Auth';
+import AvatharProvider from './context/Avathar.context';
 
 
 const router=createBrowserRouter([{
   path:"/",
   errorElement:<Errorpage/>,
-  element:<UserProvider><Layout/></UserProvider>,
+  element:<UserProvider><AvatharProvider><Layout/></AvatharProvider></UserProvider>,
   children:[
     {index:true,element:<Home/>},
     {path:"Authors",element:<Author/>},
-    {path:"Dashboard/:id",element:<Dashboard/>},
-    {path:"profile/:id",element:<Profile/>},
+    {path:"Dashboard/:id",element:<Auth><Dashboard/></Auth>},
+    {path:"profile/:id",element:<Auth><Profile/></Auth>},
     {path:"post/:id",element:<PostDetails/>},
-    {path:"post/Editpost/:id",element:<EditPost/>},
-    {path:"post/createpost",element:<CreatePost/>},
-    {path:"post/DeletePost/:id",element:<DeletePost/>},
+    {path:"post/Editpost/:id",element:<Auth><EditPost/></Auth>},
+    {path:"post/createpost",element:<Auth><CreatePost/></Auth>},
+    {path:"post/DeletePost/:id",element:<Auth><DeletePost/></Auth>},
     {path:"posts/catagory/:cat",element:<Catagorypost/>},
     {path:"posts/Authors/:id",element:<AuthorPost/>},
   ],
