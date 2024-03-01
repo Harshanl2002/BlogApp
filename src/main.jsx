@@ -41,7 +41,7 @@ const router=createBrowserRouter([{
   },  
     {path:"Login",element:<UserProvider><Login/></UserProvider>},
     {path:"register",element:<UserProvider><Register/></UserProvider>},
-    {path:"Logout",element:<UserProvider><Logout/></UserProvider>},
+    {path:"Logout",element:<UserProvider><AvatharProvider><Logout/></AvatharProvider></UserProvider>},
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(

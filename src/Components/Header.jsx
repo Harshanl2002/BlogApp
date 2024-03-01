@@ -16,7 +16,11 @@ const Header = () => {
   const {currentAvathar,SetcurrentAvathar}=useContext(Avatarcontext);
   const [avatars,setAvatar]=useState(currentAvathar===null?usermale:currentAvathar.avatarURL);
   useEffect( ()=>{
-    if (currentUser&&!(avatars===currentAvathar.avatarURL)) {
+    if(currentUser&&!currentAvathar)
+    {
+      getavathar()
+    }
+    else if (currentUser&&!(avatars===currentAvathar.avatarURL)) {
       getavathar()
     }},[currentAvathar])
   const getavathar=async()=>{
@@ -27,9 +31,12 @@ const Header = () => {
         };
         const response=await axios.get(`${BaseURIAPI}/user/byID/?:id=${currentUser.id}`,{headers:myHeaders});
         const val=response.data;
-        console.log(BaseURI+"/assets/uploads/"+val.avatar)
-        setAvatar(BaseURI+"/assets/uploads/"+val.avatar);
-        SetcurrentAvathar({avatarURL:BaseURI+"/assets/uploads/"+val.avatar})
+        if(val.avatar!="basic")
+        {
+          // console.log(BaseURI+"/assets/uploads/"+val.avatar)
+          setAvatar(BaseURI+"/assets/uploads/"+val.avatar);
+          SetcurrentAvathar({avatarURL:BaseURI+"/assets/uploads/"+val.avatar})
+        }
       } catch (error) {
         console.log(error);
       }

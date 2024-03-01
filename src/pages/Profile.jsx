@@ -46,7 +46,10 @@ const Profile = () => {
         new_val.email=val.email;
       }
       // console.log(response.data);
-      setAvatar(`${BaseURI}/assets/uploads/${val.avatar}`);
+      if(val.avatar!="basic")
+      {
+        setAvatar(`${BaseURI}/assets/uploads/${val.avatar}`);
+      }
       return setValue(new_val);
     }
     catch(error)

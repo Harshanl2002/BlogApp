@@ -168,12 +168,12 @@ export const DummyCatagorypost=[
 ]
 
 export const Authors=[
-    {id:1,avatar:profile1,name:"Hailey Gomez",posts:2},
-    {id:2,avatar:profile2,name:"Adler Coffey",posts:1},
-    {id:3,avatar:profile3,name:"Harper Simon",posts:2},
-    {id:4,avatar:profile4,name:"Hayes Watson",posts:1},
-    {id:5,avatar:profile5,name:"Angel Corona",posts:3},
-    {id:6,avatar:profile6,name:"Jake Rivers",posts:0}
+    {_id:1,avatar:profile1,name:"Hailey Gomez",posts:2},
+    {_id:2,avatar:profile2,name:"Adler Coffey",posts:1},
+    {_id:3,avatar:profile3,name:"Harper Simon",posts:2},
+    {_id:4,avatar:profile4,name:"Hayes Watson",posts:1},
+    {_id:5,avatar:profile5,name:"Angel Corona",posts:3},
+    {_id:6,avatar:profile6,name:"Jake Rivers",posts:0}
 ]
 
 export const Dashboardposts=[
