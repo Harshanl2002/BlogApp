@@ -48,9 +48,7 @@ const Login = () => {
             {errorMsg&&<p className="min-w-[90%] text-center bg-red-300 my-2 text-[#1e1e1e] text-[16px] rounded-sm p-2">{errorMsg}</p>}
             <input type="text" placeholder="Email" name='email' value={userdata.email} onChange={changeInputHandeler} className="min-w-[90%] border border-[#929292] p-1 focus:outline-none mb-2 rounded-sm" />
             <input type={password?"text":"password"} placeholder="Password" name='password' value={userdata.password} onChange={changeInputHandeler} className="min-w-[90%] border border-[#929292] p-1 focus:outline-none mb-2 rounded-sm" />
-            <small className='self-end me-10'><input type='checkbox' value={password} onChange={()=>{
-              setpassword(!password);
-            }}/>show Password</small>
+            <label className='self-end me-10 text-[14px] select-none' ><input type='checkbox' value={password} onChange={()=>{setpassword(!password);}}/>show Password</label>
             <button type='submit' className="p-2 btn btn-sm btn-primary mt-2">Login</button>
           </form>
           <small>Dont have an accoount?<Link to={"/Register"} className="text-primary font-bold">Create Account</Link></small>

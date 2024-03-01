@@ -10,12 +10,12 @@ import { Avatarcontext } from '../context/Avathar.context';
 
 
 
-const value={
+const value1={
   name:"Adler Coffey",
-  Email:"AdlerCoffey@gmail.com",
-  password:"",
-  newpassword:"",
-  confirmPassword:""
+  email:"AdlerCoffey@gmail.com",
+  currentpass:"",
+  newpass:"",
+  confirmPass:""
 }
 const Profile = () => {
   const [errorMsg, setErrorMsg] = useState('');
@@ -27,7 +27,7 @@ const Profile = () => {
   const id=currentUser.id;
   const token=`Bearer ${currentUser.token}`;
   
-  const [values,setValue]=useState(value);
+  const [values,setValue]=useState(value1);
   useEffect(()=>{
     getvalues();
   },[])
@@ -41,11 +41,11 @@ const Profile = () => {
       const val=response.data;
       if(val)
       {
-        const new_val=value;
+        const new_val=value1;
         new_val.name=val.name;
-        new_val.Email=val.email;
+        new_val.email=val.email;
       }
-      console.log(response.data);
+      // console.log(response.data);
       setAvatar(`${BaseURI}/assets/uploads/${val.avatar}`);
       return setValue(new_val);
     }
@@ -84,7 +84,21 @@ const Profile = () => {
     }
     
   }
-
+  const submithandler=async (e)=>{
+    e.preventDefault()
+    setErrorMsg('');
+    try {
+      const myHeaders = {
+        'Content-Type': "text/json",
+        'Authorization': token, // Add any other headers as needed
+      };
+      const response=await axios.put(BaseURIAPI+"user/update-User",toFormData(values),{headers:myHeaders});
+      const val=await response.data;
+      console.log(val);
+    } catch (error) {
+      return setErrorMsg('somethinng went wrong');     
+    }
+  }
   return (
     <section className="min-h-[100vh] p-5 flex flex-col items-center font-poppins">
       <div className="flex flex-col items-center">
@@ -97,12 +111,12 @@ const Profile = () => {
       </div>
       {errorMsg&&<p className="min-w-[50vw] max-lg:w-[85vw] text-center  bg-red-300 text-[#1e1e1e] text-[16px] rounded-sm p-2">{errorMsg}</p>}
       <div className="mb-5 flex flex-col items-center">
-        <form className="flex flex-col min-h-[45vh] justify-evenly">
-          <input type='text' name='name' placeholder="Name" className="lg:w-[50vw] max-lg:w-[85vw] input input-sm focus:outline-none border border-[#8a8a8a] rounded-[4px]" value={values.name} onChange={changeInputHandeler} />
-          <input type='text' name='Email' placeholder="Email" className="lg:w-[50vw] max-lg:w-[85vw] input input-sm focus:outline-none border border-[#8a8a8a] rounded-[4px]" value={values.Email} onChange={changeInputHandeler}/>
-          <input type='password' name='current_password' placeholder="Current password" className="lg:w-[50vw] max-lg:w-[85vw] input input-sm focus:outline-none border border-[#8a8a8a] rounded-[4px]" value={values.password} onChange={changeInputHandeler} />
-          <input type='password' name='new_password' placeholder="New Password" className="lg:w-[50vw] max-lg:w-[85vw] input input-sm focus:outline-none border border-[#8a8a8a] rounded-[4px]" value={values.newpassword} onChange={changeInputHandeler} />
-          <input type='password' name='confirm_password' placeholder="Confirm Password" className="lg:w-[50vw] max-lg:w-[85vw] input input-sm focus:outline-none border border-[#8a8a8a] rounded-[4px]" value={values.confirmPassword} onChange={changeInputHandeler} />
+        <form className="flex flex-col min-h-[45vh] justify-evenly" onSubmit={submithandler}>
+          <input type='text' name='name' placeholder="Name" className="lg:w-[50vw] max-lg:w-[85vw] input input-sm focus:outline-none border border-[#8a8a8a] rounded-[4px]" value={values.name} onChange={changeInputHandeler}  />
+          <input type='text' name='email' placeholder="Email" className="lg:w-[50vw] max-lg:w-[85vw] input input-sm focus:outline-none border border-[#8a8a8a] rounded-[4px]" value={values.email} onChange={changeInputHandeler}/>
+          <input type='password' name='currentpass' placeholder="Password" className="lg:w-[50vw] max-lg:w-[85vw] input input-sm focus:outline-none border border-[#8a8a8a] rounded-[4px]" value={values.currentpass} onChange={changeInputHandeler}/>
+          <input type='password' name='newpass' placeholder="New Password" className="lg:w-[50vw] max-lg:w-[85vw] input input-sm focus:outline-none border border-[#8a8a8a] rounded-[4px]" value={values.newpass} onChange={changeInputHandeler}/>
+          <input type='password' name='confirmPass' placeholder="Confrim Password" className="lg:w-[50vw] max-lg:w-[85vw] input input-sm focus:outline-none border border-[#8a8a8a] rounded-[4px]" value={values.confirmPass} onChange={changeInputHandeler}/>
           <button type='submit' className='btn btn-sm btn-primary mx-auto'>{"Update Changes"}</button>
         </form>
       </div>

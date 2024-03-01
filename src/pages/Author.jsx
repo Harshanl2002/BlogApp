@@ -1,7 +1,11 @@
 import React,{useState} from 'react'
 import {Authors} from "../const";
 import { Link } from 'react-router-dom';
-
+import { BaseURIAPI,BaseURI } from '../const.URI';
+import  axios from 'axios';
+import { UserContext } from '../context/user.context';
+import { toFormData } from 'axios';
+import { Avatarcontext } from '../context/Avathar.context';
 const Author = () => {
   const [author,setAuthors]=useState(Authors); 
   return (
