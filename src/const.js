@@ -16,154 +16,154 @@ import profile6 from "./assets/mern-blog-assets-main/avatar6.jpg"
 
 export const Dummypost=[
     {
-        id:1,
-        thumbnail:b1,
-        catogory:"education",
+        _id:1,
+        thumpnail:b1,
+        catagory:"education",
         title:"Lorem ipsum dolor sit amet consectetur adipisicing Lorem ipsum dolor sit amet consectetur adipisicing New Post-1",
         content:"Lorem ipsum dolor sit amet consectetur adipisicing elit. In quibusdam Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit iure id quod explicabo? Perferendis dignissimos reiciendis odio facere perspiciatis quia!...",
-        author_id:1
+        AuthorID:1
     },
     {
-        id:2,
-        thumbnail:b2,
-        catogory:"Agriculture",
+        _id:2,
+        thumpnail:b2,
+        catagory:"Agriculture",
         title:"New Post-2",
         content:`Lorem ipsum dolor sit amet consectetur adipisicing elit. In quibusdam Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit iure id quod explicabo? Perferendis dignissimos reiciendis odio facere perspiciatis quia!...`,
-        author_id:2
+        AuthorID:2
     },
     {
-        id:3,
-        thumbnail:b3,
-        catogory:"Movies",
+        _id:3,
+        thumpnail:b3,
+        catagory:"Movies",
         title:"New Post-3",
         content:`Lorem ipsum dolor sit amet consectetur adipisicing elit. In quibusdam Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit iure id quod explicabo? Perferendis dignissimos reiciendis odio facere perspiciatis quia!...`,
-        author_id:3
+        AuthorID:3
     },
     {
-        id:4,
-        thumbnail:b4,
-        catogory:"Food",
+        _id:4,
+        thumpnail:b4,
+        catagory:"Food",
         title:"New Post-4",
         content:`Lorem ipsum dolor sit amet consectetur adipisicing elit. In quibusdam Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit iure id quod explicabo? Perferendis dignissimos reiciendis odio facere perspiciatis quia!...`,
-        author_id:4
+        AuthorID:4
     },
     {
-        id:5,
-        thumbnail:b5,
-        catogory:"Technology",
+        _id:5,
+        thumpnail:b5,
+        catagory:"Technology",
         title:"New Post-5",
         content:`Lorem ipsum dolor sit amet consectetur adipisicing elit. In quibusdam Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit iure id quod explicabo? Perferendis dignissimos reiciendis odio facere perspiciatis quia!...`,
-        author_id:5
+        AuthorID:5
     },
     {
-        id:6,
-        thumbnail:b6,
-        catogory:"Entertainment",
+        _id:6,
+        thumpnail:b6,
+        catagory:"Entertainment",
         title:"New Post-6",
         content:`Lorem ipsum dolor sit amet consectetur adipisicing elit. In quibusdam Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit iure id quod explicabo? Perferendis dignissimos reiciendis odio facere perspiciatis quia!...`,
-        author_id:6
+        AuthorID:6
     },
     {
-        id:7,
-        thumbnail:b7,
-        catogory:"Health",
+        _id:7,
+        thumpnail:b7,
+        catagory:"Health",
         title:"New Post-7",
         content:`Lorem ipsum dolor sit amet consectetur adipisicing elit. In quibusdam Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit iure id quod explicabo? Perferendis dignissimos reiciendis odio facere perspiciatis quia!...`,
-        author_id:7
+        AuthorID:7
     },
     {
-        id:8,
-        thumbnail:b8,
-        catogory:"uncatagorized",
+        _id:8,
+        thumpnail:b8,
+        catagory:"uncatagorized",
         title:"New Post-8",
         content:`Lorem ipsum dolor sit amet consectetur adipisicing elit. In quibusdam Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit iure id quod explicabo? Perferendis dignissimos reiciendis odio facere perspiciatis quia!...`,
-        author_id:8
+        AuthorID:8
     },
     {
-        id:9,
-        thumbnail:b9,
-        catogory:"finance",
+        _id:9,
+        thumpnail:b9,
+        catagory:"finance",
         title:"New Post-9",
         content:`Lorem ipsum dolor sit amet consectetur adipisicing elit. In quibusdam Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit iure id quod explicabo? Perferendis dignissimos reiciendis odio facere perspiciatis quia!...`,
-        author_id:9
+        AuthorID:9
     }
 ] 
 
 export const DummyAuthorpost=[
     {
-        id:1,
-        thumbnail:b1,
-        catogory:"education",
+        _id:1,
+        thumpnail:b1,
+        catagory:"education",
         title:"Lorem ipsum dolor sit amet consectetur adipisicing Lorem ipsum dolor sit amet consectetur adipisicing New Post-1",
         content:"Lorem ipsum dolor sit amet consectetur adipisicing elit. In quibusdam Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit iure id quod explicabo? Perferendis dignissimos reiciendis odio facere perspiciatis quia!...",
-        author_id:1
+        AuthorID:1
     },
     {
-        id:2,
-        thumbnail:b2,
-        catogory:"Agriculture",
+        _id:2,
+        thumpnail:b2,
+        catagory:"Agriculture",
         title:"New Post-2",
         content:`Lorem ipsum dolor sit amet consectetur adipisicing elit. In quibusdam Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit iure id quod explicabo? Perferendis dignissimos reiciendis odio facere perspiciatis quia!...`,
-        author_id:2
+        AuthorID:2
     },
     {
-        id:3,
-        thumbnail:b3,
-        catogory:"Movies",
+        _id:3,
+        thumpnail:b3,
+        catagory:"Movies",
         title:"New Post-3",
         content:`Lorem ipsum dolor sit amet consectetur adipisicing elit. In quibusdam Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit iure id quod explicabo? Perferendis dignissimos reiciendis odio facere perspiciatis quia!...`,
-        author_id:3
+        AuthorID:3
     },
     {
-        id:4,
-        thumbnail:b4,
-        catogory:"Food",
+        _id:4,
+        thumpnail:b4,
+        catagory:"Food",
         title:"New Post-4",
         content:`Lorem ipsum dolor sit amet consectetur adipisicing elit. In quibusdam Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit iure id quod explicabo? Perferendis dignissimos reiciendis odio facere perspiciatis quia!...`,
-        author_id:4
+        AuthorID:4
     },
     {
-        id:5,
-        thumbnail:b5,
-        catogory:"Technology",
+        _id:5,
+        thumpnail:b5,
+        catagory:"Technology",
         title:"New Post-5",
         content:`Lorem ipsum dolor sit amet consectetur adipisicing elit. In quibusdam Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit iure id quod explicabo? Perferendis dignissimos reiciendis odio facere perspiciatis quia!...`,
-        author_id:5
+        AuthorID:5
     },
     {
-        id:6,
-        thumbnail:b6,
-        catogory:"Entertainment",
+        _id:6,
+        thumpnail:b6,
+        catagory:"Entertainment",
         title:"New Post-6",
         content:`Lorem ipsum dolor sit amet consectetur adipisicing elit. In quibusdam Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit iure id quod explicabo? Perferendis dignissimos reiciendis odio facere perspiciatis quia!...`,
-        author_id:6
+        AuthorID:6
     },
 ]
 
 export const DummyCatagorypost=[
     {
-        id:1,
-        thumbnail:b1,
-        catogory:"education",
+        _id:1,
+        thumpnail:b1,
+        catagory:"education",
         title:"Lorem ipsum dolor sit amet consectetur adipisicing Lorem ipsum dolor sit amet consectetur adipisicing New Post-1",
         content:"Lorem ipsum dolor sit amet consectetur adipisicing elit. In quibusdam Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit iure id quod explicabo? Perferendis dignissimos reiciendis odio facere perspiciatis quia!...",
-        author_id:1
+        AuthorID:1
     },
     {
-        id:2,
-        thumbnail:b2,
-        catogory:"Agriculture",
+        _id:2,
+        thumpnail:b2,
+        catagory:"Agriculture",
         title:"New Post-2",
         content:`Lorem ipsum dolor sit amet consectetur adipisicing elit. In quibusdam Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit iure id quod explicabo? Perferendis dignissimos reiciendis odio facere perspiciatis quia!...`,
-        author_id:2
+        AuthorID:2
     },
     {
-        id:3,
-        thumbnail:b3,
-        catogory:"Movies",
+        _id:3,
+        thumpnail:b3,
+        catagory:"Movies",
         title:"New Post-3",
         content:`Lorem ipsum dolor sit amet consectetur adipisicing elit. In quibusdam Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit iure id quod explicabo? Perferendis dignissimos reiciendis odio facere perspiciatis quia!...`,
-        author_id:3
+        AuthorID:3
     }
 ]
 
@@ -177,16 +177,16 @@ export const Authors=[
 ]
 
 export const Dashboardposts=[
-    {id:1,thumbnail:b1,title:"Lorem ipsum dolor sit amet consectetur "},
-    {id:2,thumbnail:b2,title:"Post-2"},
-    {id:3,thumbnail:b3,title:"Post-3"},
-    {id:4,thumbnail:b4,title:"Post-4"}
+    {_id:1,thumpnail:b1,title:"Lorem ipsum dolor sit amet consectetur "},
+    {_id:2,thumpnail:b2,title:"Post-2"},
+    {_id:3,thumpnail:b3,title:"Post-3"},
+    {_id:4,thumpnail:b4,title:"Post-4"}
 ];
 
 export const createpostData={
-    id:1,
-    thumbnail:b1,
-    catogory:"education",
+    _id:1,
+    thumpnail:b1,
+    catagory:"education",
     title:"Lorem ipsum dolor sit amet consectetur adipisicing Lorem ipsum dolor sit amet consectetur adipisicing New Post-1",
     content:"Lorem ipsum dolor sit amet consectetur adipisicing elit. In quibusdam Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit iure id quod explicabo? Perferendis dignissimos reiciendis odio facere perspiciatis quia!...",
 }
@@ -222,10 +222,10 @@ export const format=[
 ]
 
 export const editpostvar={
-    id:1,
-    thumbnail:b1,
-    catogory:"education",
+    _id:1,
+    thumpnail:b1,
+    catagory:"education",
     title:"Lorem ipsum dolor sit amet consectetur adipisicing Lorem ipsum dolor sit amet consectetur adipisicing New Post-1",
     content:"Lorem ipsum dolor sit amet consectetur adipisicing elit. In quibusdam Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit iure id quod explicabo? Perferendis dignissimos reiciendis odio facere perspiciatis quia!...",
-    author_id:1
+    AuthorID:1
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Postauthor from './Postauthor';
 
-const PostItem = ({postId,thumbnail,catogory,title,content,author_id}) => {
+const PostItem = ({postId,thumbnail,catogory,title,content,author_id,updatedAt}) => {
     const body=content.length>145?content.substr(0,145)+"...":content;
     const tit=title.length>30?content.substr(0,30)+"...":title                             ;
   return (
@@ -19,7 +19,7 @@ const PostItem = ({postId,thumbnail,catogory,title,content,author_id}) => {
             </div>
         </Link>
         <div className="flex justify-between items-center py-2 px-4">
-            <Postauthor author_id={author_id}/>
+            <Postauthor author_id={author_id} updatedAt={updatedAt}/>
             <Link to={`/posts/catagory/${catogory}`} className="badge badge-outline text-[8px]">
                 {catogory}
             </Link>

@@ -29,7 +29,7 @@ const Header = () => {
           'Content-Type': "text/json",
           'Authorization': `Bearer ${currentUser.token}`, // Add any other headers as needed
         };
-        const response=await axios.get(`${BaseURIAPI}/user/byID/?:id=${currentUser.id}`,{headers:myHeaders});
+        const response=await axios.get(`${BaseURIAPI}user/byID/${currentUser.id}`,{headers:myHeaders});
         const val=response.data;
         if(val.avatar!="basic")
         {
@@ -57,7 +57,7 @@ const Header = () => {
         <label htmlFor="my-drawer" className="btn btn-primary drawer-button w-[60%] rounded-badge my-5">
           <ImCircleLeft/>Close</label>
           <li className="border-primary border-b-2"><Link to={"/"}>{"Home"}</Link></li>
-          {currentUser!==null&&<li className="border-primary border-b-2"><Link to={"/Dashboard"}>{"Dashboard"}</Link></li>}
+          {currentUser!==null&&<li className="border-primary border-b-2"><Link to={"/Dashboard/"+currentUser.id}>{"Dashboard"}</Link></li>}
           <li className="border-primary border-b-2"><Link to={"/Authors"}>{"Authors"}</Link></li>
           {currentUser===null&&<li className="border-primary border-b-2"><Link to={"/Login"}>Login</Link></li>}
         {currentUser===null&&<li className="border-primary border-b-2"><Link to={"/register"}>Register</Link></li>
@@ -74,7 +74,7 @@ const Header = () => {
     <div className="navbar-end flex items-center">
     <ul className="menu menu-horizontal text-primary focus:text-primary max-lg:hidden ">
         <li><Link to={"/"}>{"Home"}</Link></li>
-        {currentUser!==null&&<li><Link to={"/Dashboard/dummy"}>{"Dashboard"}</Link></li>}
+        {currentUser!==null&&<li><Link to={"/Dashboard/"+currentUser.id}>{"Dashboard"}</Link></li>}
         <li><Link to={"/Authors"}>{"Authors"}</Link></li>
         
     </ul>

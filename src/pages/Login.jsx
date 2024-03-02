@@ -5,12 +5,15 @@ import svg from "../assets/register.svg";
 import { BaseURIAPI } from '../const.URI';
 import  axios from 'axios';
 import { UserContext } from '../context/user.context';
+import Spinner from '../Components/spinner';
+
 
 const Login = () => {
   const [userdata,setuserdata]=useState({
     email:'',
     password:'',
   });
+  const [spiner,setSpinner]=useState(false)
   const [errorMsg, setErrorMsg] = useState('');
   const navigate=useNavigate();
   const {setCurrentUser}=useContext(UserContext);
@@ -26,6 +29,7 @@ const Login = () => {
     e.preventDefault()
     setErrorMsg('');
     try {
+      setSpinner(true);
       const response=await axios.post(BaseURIAPI+"user/login",userdata);
       const newuser=await response.data;
       setCurrentUser(newuser);
@@ -33,16 +37,15 @@ const Login = () => {
       if(!newuser){
         setErrorMsg("Couldn't login User Plz try again after sometime.")
       };
-      
+      setSpinner(false);
     } catch (error) {
       setErrorMsg(error.response.data.message);
     }
   }
 
   return (
-    <div className="min-h-[100vh] flex justify-around bg-slate-100 max-lg:flex-col-reverse">
-      
-      <div className="min-w-[60vw] min-h-full  flex flex-col  items-center py-10 font-Roboto">
+    <div className='min-h-[100vh] flex justify-center items-center'>
+      {spiner?<Spinner/>:<div className="min-h-[100vh] flex justify-around bg-slate-100 max-lg:flex-col-reverse"><div className="min-w-[60vw] min-h-full  flex flex-col  items-center py-10 font-Roboto">
           <h1 className="text-[40px] font-bold font-poppins mb-10">Sign In</h1>
           <form  className="min-w-[90%] ms-[5%] me-[5%] max-w-[90%]  flex flex-col items-center py-10" onSubmit={logintoserver}>
             {errorMsg&&<p className="min-w-[90%] text-center bg-red-300 my-2 text-[#1e1e1e] text-[16px] rounded-sm p-2">{errorMsg}</p>}
@@ -66,6 +69,7 @@ const Login = () => {
           <h1 className="text-[40px] font-bold font-poppins mb-10">Sign In</h1>
         </div>    
       </div>
+      </div>}
     </div>
   )
 }

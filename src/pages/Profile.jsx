@@ -7,19 +7,13 @@ import  axios from 'axios';
 import { UserContext } from '../context/user.context';
 import { toFormData } from 'axios';
 import { Avatarcontext } from '../context/Avathar.context';
+import Spinner from '../Components/spinner';
 
 
 
-const value1={
-  name:"Adler Coffey",
-  email:"AdlerCoffey@gmail.com",
-  currentpass:"",
-  newpass:"",
-  confirmPass:""
-}
 const Profile = () => {
   const [errorMsg, setErrorMsg] = useState('');
-  const navigate=useNavigate();
+  const [spiner,setSpinner]=useState(true)
   const {currentUser}=useContext(UserContext);
   const {SetcurrentAvathar}=useContext(Avatarcontext);
 
@@ -27,38 +21,29 @@ const Profile = () => {
   const id=currentUser.id;
   const token=`Bearer ${currentUser.token}`;
   
-  const [values,setValue]=useState(value1);
+  const [values,setValue]=useState({});
   useEffect(()=>{
     getvalues();
   },[])
   const getvalues=async()=>{
     try{
-      const myHeaders = {
-        'Content-Type': "text/json",
-        'Authorization': token, // Add any other headers as needed
-      };
-      const response=await axios.get(`${BaseURIAPI}/user/byID/?:id=${id}`,{headers:myHeaders});
+      setSpinner(true);
+      const response=await axios.get(`${BaseURIAPI}/user/byID/${id}`);
       const val=response.data;
-      if(val)
-      {
-        const new_val=value1;
-        new_val.name=val.name;
-        new_val.email=val.email;
-      }
-      // console.log(response.data);
       if(val.avatar!="basic")
       {
         setAvatar(`${BaseURI}/assets/uploads/${val.avatar}`);
       }
-      return setValue(new_val);
+      setSpinner(false);
+      return setValue({name:val.name,email:val.email,currentpass:'',newpass:'',confirmPass:''});
     }
     catch(error)
     {
-      return setErrorMsg(error.response);
+      console.log(error);
     }
 
   }
-  const [avatars,setAvatar]=useState(avatar);
+  const [avatars,setAvatar]=useState({});
 
   
   const changeInputHandeler=(e)=>{
@@ -69,6 +54,7 @@ const Profile = () => {
   
   const changeAvatar=async(e)=>{
     try {
+      setSpinner(true);
       // console.log(token);
       const  file=e.target.files[0];
       const myHeaders = {
@@ -82,6 +68,7 @@ const Profile = () => {
         setAvatar(`${BaseURI}/assets/uploads/${avathar.data.avatar}`);
         SetcurrentAvathar({avatarURL:`${BaseURI}/assets/uploads/${avathar.data.avatar}`})
       }
+      setSpinner(false);
     } catch (error) {
       return setErrorMsg(error.response.data.message);
     }
@@ -91,22 +78,27 @@ const Profile = () => {
     e.preventDefault()
     setErrorMsg('');
     try {
+      setSpinner(true);
       const myHeaders = {
         'Content-Type': "text/json",
         'Authorization': token, // Add any other headers as needed
       };
       const response=await axios.put(BaseURIAPI+"user/update-User",toFormData(values),{headers:myHeaders});
       const val=await response.data;
-      console.log(val);
+      // console.log(val);
+      setSpinner(false);
+
     } catch (error) {
       return setErrorMsg('somethinng went wrong');     
     }
   }
   return (
-    <section className="min-h-[100vh] p-5 flex flex-col items-center font-poppins">
-      <div className="flex flex-col items-center">
-        <Link to={`/Dashboard/${id}`} className="btn btn-primary btn-sm text-white">My Posts</Link>
-      </div>
+    <section className='min-h-[100vh] p-5 flex  items-center justify-center'>
+      {spiner?<Spinner/>:
+      <div className="min-h-[100vh] p-5 flex flex-col items-center font-poppins">
+        <div className="flex flex-col items-center">
+          <Link to={`/Dashboard/${id}`} className="btn btn-primary btn-sm text-white">My Posts</Link>
+        </div>
       <div className="my-2 flex items-center">
         <img src={avatars} alt="current User Profile photo" className="rounded-[50%] block lg:w-[15vw] lg:h-[30vh] max-lg:w-[50vw] max-lg:h-[30vh]"  />
         <input type='file' name='avatar' id='avatar' accept=".jpg,.jpeg,.png" onChange={changeAvatar}  className="hidden"/>
@@ -123,6 +115,7 @@ const Profile = () => {
           <button type='submit' className='btn btn-sm btn-primary mx-auto'>{"Update Changes"}</button>
         </form>
       </div>
+      </div>}
     </section>
   )
 }

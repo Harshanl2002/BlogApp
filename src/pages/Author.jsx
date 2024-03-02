@@ -4,13 +4,17 @@ import { Link } from 'react-router-dom';
 import { BaseURIAPI,BaseURI } from '../const.URI';
 import  axios from 'axios';
 import defavatar from "../assets/user-male-circle.png";
+import Spinner from '../Components/spinner';
+
 const Author = () => {
-  const [author,setAuthors]=useState(Authors); 
+  const [author,setAuthors]=useState(Authors);
+  const [spiner,setSpinner]=useState(true)
   useEffect(()=>{
     getAllAuthors();
   },[])
   const getAllAuthors=async ()=>{
     try {
+      setSpinner(true)
       const response=await axios.get(`${BaseURIAPI}/user/authors`);
       const  data=response.data;
       for(let i of data){
@@ -21,14 +25,15 @@ const Author = () => {
       }
       // console.log(data);
       setAuthors(data)
+      setSpinner(false)
     } catch (error) {
       console.log(error);
     }
   }
 
   return (
-    <section className="flex justify-center items-center p-5">
-    <section className=" min-h-[70vh] flex flex-col justify-center items-center">
+    <section className="min-h-[70vh] flex justify-center items-center p-5">
+    {spiner?<Spinner></Spinner>:<section className=" min-h-[70vh] flex flex-col justify-center items-center">
       {
         author.length>0?
         <div  className="grid lg:grid-cols-3 gap-10">
@@ -50,7 +55,7 @@ const Author = () => {
         </div>
         :<h2 className="text-3xl text-[#1e1e1e] font-Roboto font-bold">{"No Authors or Users found !!!".toLocaleUpperCase()}</h2>
       }
-    </section>
+    </section>}
   </section>
   )
 }
