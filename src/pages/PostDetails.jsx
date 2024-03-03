@@ -23,7 +23,7 @@ const PostDetails = () => {
       setSpinner(true);
       const response= await axios.get(BaseURIAPI+"posts/"+id);
       const data=response.data;
-      // console.log(data);
+      console.log(data.content.split("\n"));
       setPost({title: data.title,thumpnail: `${BaseURI}/assets/thumpnails/${data.thumpnail}`,content: data.content,AuthorID: data.AuthorID,updatedAt: data.updatedAt});
       setSpinner(false)
 
@@ -48,7 +48,7 @@ const PostDetails = () => {
         </figure>
         <div className="mx-2 text-[#1e1e1e] font-Roboto font-medium">
           {
-            post.content.split("\n").map((data,index)=>{
+            post.content.split("\r\n").map((data,index)=>{
               return (
                 <span key={index}>
                    <p className="my-2 text-sm text-justify">{data}</p>
