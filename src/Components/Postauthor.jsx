@@ -1,6 +1,6 @@
 import React,{useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
-import avatar from "../assets/mern-blog-assets-main/avatar1.jpg";
+import avatar from "../assets/user-male-circle.png";
 import axios from 'axios';
 import { BaseURI,BaseURIAPI } from '../const.URI';
 const Postauthor = ({author_id,updatedAt}) => {
@@ -15,7 +15,7 @@ const Postauthor = ({author_id,updatedAt}) => {
       //console.log(val)
       return setData({
         name:val.name,
-        thumpnail:val.thumpnail!="basic"?`${BaseURI}/assets/uploads/${val.avatar}`:avatar,
+        thumpnail:val.avatar!="basic"?`${BaseURI}/assets/uploads/${val.avatar}`:avatar,
         date:new Date(updatedAt).toLocaleDateString('en-US',{
           year: 'numeric',
           month: 'short',

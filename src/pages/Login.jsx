@@ -45,7 +45,8 @@ const Login = () => {
 
   return (
     <div className='min-h-[100vh] flex justify-center items-center'>
-      {spiner?<Spinner/>:<div className="min-h-[100vh] flex justify-around bg-slate-100 max-lg:flex-col-reverse"><div className="min-w-[60vw] min-h-full  flex flex-col  items-center py-10 font-Roboto">
+      {spiner?<Spinner/>:<div className="min-h-[100vh] min-w-[100vw] flex justify-around bg-slate-100 max-lg:flex-col-reverse">
+        <div className="min-w-[60vw] min-h-full  flex flex-col  items-center py-10 font-Roboto">
           <h1 className="text-[40px] font-bold font-poppins mb-10">Sign In</h1>
           <form  className="min-w-[90%] ms-[5%] me-[5%] max-w-[90%]  flex flex-col items-center py-10" onSubmit={logintoserver}>
             {errorMsg&&<p className="min-w-[90%] text-center bg-red-300 my-2 text-[#1e1e1e] text-[16px] rounded-sm p-2">{errorMsg}</p>}

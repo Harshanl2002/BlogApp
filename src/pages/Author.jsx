@@ -23,10 +23,11 @@ const Author = () => {
           i.avatar=`${BaseURI}/assets/uploads/${i.avatar}`
         }
       }
-      // console.log(data);
+      console.log(data);
       setAuthors(data)
-      setSpinner(false)
+      return setSpinner(false)
     } catch (error) {
+      setSpinner(false)
       console.log(error);
     }
   }

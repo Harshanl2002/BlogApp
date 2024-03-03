@@ -5,9 +5,9 @@ import { FaEdit,FaCheck } from "react-icons/fa";
 import { BaseURIAPI,BaseURI } from '../const.URI';
 import  axios from 'axios';
 import { UserContext } from '../context/user.context';
-import { toFormData } from 'axios';
 import { Avatarcontext } from '../context/Avathar.context';
 import Spinner from '../Components/spinner';
+import { toFormData } from 'axios';
 
 
 

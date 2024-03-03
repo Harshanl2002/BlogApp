@@ -24,8 +24,8 @@ const Authorpost = () => {
       setPosts(data);
       setSpinner(false);
     } catch (error) {
+      setSpinner(false);
       console.log(error);
-      
     }
   }
   return (
