@@ -3,12 +3,12 @@
 Welcome to .blog! This is a simple and elegant blogging platform designed to help you share your thoughts, ideas, and stories with the world. Whether you're a seasoned writer or just starting out, .blog provides an intuitive and user-friendly interface to create and publish your content hassle-free.
 
 ## Features
-User-friendly Interface: .blog offers a clean and intuitive interface, making it easy for you to focus on writing.
-Customizable Themes: Choose from a variety of themes to personalize the look and feel of your blog.
-Responsive Design: Your blog will look great on any device, whether it's a desktop, tablet, or smartphone.
-SEO Optimized: .blog is optimized for search engines, helping your content reach a wider audience.
-Social Media Integration: Easily share your blog posts on popular social media platforms to increase your reach.
-Comments: Engage with your audience through comments on your blog posts.
+User-friendly Interface: .blog offers a clean and intuitive interface, making it easy for you to focus on writing.<br>
+Customizable Themes: Choose from a variety of themes to personalize the look and feel of your blog.<br>
+Responsive Design: Your blog will look great on any device, whether it's a desktop, tablet, or smartphone.<br>
+SEO Optimized: .blog is optimized for search engines, helping your content reach a wider audience.<br>
+Social Media Integration: Easily share your blog posts on popular social media platforms to increase your reach.<br>
+Comments: Engage with your audience through comments on your blog posts.<br>
 Analytics: Track your blog's performance with built-in analytics tools.
 ## Getting Started
 To get started with .blog, simply sign up for an account on our website and start creating your first blog post. You can customize your blog's appearance, write compelling content, and publish it for the world to see.
